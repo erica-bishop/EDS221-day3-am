@@ -1,0 +1,96 @@
+---
+title: "For Loop Practice"
+author: "Erica Bishop"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+
+```
+
+`IF` statement practice
+
+```{r}
+
+burrito <- 3
+
+if (burrito > 2) {
+  print("I love burritos!")
+}
+
+```
+
+String example with stringr
+
+
+```{r}
+#str_detect looks for pattern specified and returns T/F
+
+my_ships <- c("Millenium Falcon", "X-wing", "Tie-Fighter", "Death Star")
+
+str_detect(my_ships, pattern = "r")
+
+```
+
+Looking at starwars data set
+Also set global options to use native pipe operator |> instead of tidyverse operator %>%
+
+```{r}
+
+tatooine_characters <- starwars |>
+  filter(homeworld == "Tatooine")
+
+#Now use %in% to check for multiple positive matches, shortcut for adding or statements | to filter() - asks if the value in homeworld exist the vector created c() - or can call a pre-existing vecotr 
+
+tatooine_endor_naboo <- starwars |> filter(homeworld %in% c("Tatooine", "Naboo","Endor"))
+  
+
+
+```
+
+```{r}
+
+str_detect(my_ships, pattern = "X")
+
+phrase <- "I love burritos"
+
+if (str_detect(phrase, "love")) {
+  print("I am a burrito fan")
+}
+
+```
+
+### if-else statements
+
+```{r}
+
+pika <- 89.1
+
+if (pika > 60) {
+  print("mega pika")
+} else {
+  print("normal pika")
+}
+
+
+```
+
+```{r}
+
+marmot <- 2.8
+
+if (marmot < 0.5) {
+  print("this is a small marmot")
+} else if (marmot >= 0.5 & marmot < 3) {
+  print("this is a medium marmot")
+} else {
+  print("this is a large marmot")
+}
+
+```
+
+
